@@ -1,16 +1,12 @@
 import os
-import shutil
 import typer
 
-app = typer.Typer()
-
-@app.command()
-def create(project_name: str):
+def startproject(project_name: str):
     """
     Create a new FastAPI project with core structure.
     """
     if os.path.exists(project_name):
-        typer.echo(f"Project {project_name} already exists.")
+        typer.echo(f"❌ Project '{project_name}' already exists.")
         raise typer.Exit()
 
     os.makedirs(f"{project_name}/apps")
@@ -24,7 +20,7 @@ app = FastAPI()
 
 @app.get("/")
 def root():
-    return {"message": "Hello from FastForge!"}
+    return {"message": "Hello from fastapi-kit!"}
 """)
 
     with open(f"{project_name}/core/__init__.py", "w") as f:

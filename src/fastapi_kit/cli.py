@@ -2,9 +2,11 @@ import typer
 from fastapi_kit.commands import startproject, startapp, generate_crud
 
 app = typer.Typer()
-app.add_typer(startproject.app, name="startproject")
-app.add_typer(startapp.app, name="startapp")
-app.add_typer(generate_crud.app, name="generate-crud")
+
+# Flattened CLI commands
+app.command()(startproject.startproject)
+app.command()(startapp.startapp)
+app.command()(generate_crud.generate_crud)
 
 def main():
     app()

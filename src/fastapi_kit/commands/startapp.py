@@ -4,14 +4,14 @@ import typer
 app = typer.Typer()
 
 @app.command()
-def create(app_name: str, path: str = "apps"):
+def startapp(app_name: str, path: str = "apps"):
     """
-    Create a new app module inside the project.
+    Create a new FastAPI app module.
     """
     app_path = os.path.join(path, app_name)
 
     if os.path.exists(app_path):
-        typer.echo(f"App {app_name} already exists.")
+        typer.echo(f"App '{app_name}' already exists.")
         raise typer.Exit()
 
     os.makedirs(app_path)

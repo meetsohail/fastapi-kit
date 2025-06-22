@@ -1,17 +1,14 @@
 import os
 import typer
 
-app = typer.Typer()
-
-@app.command()
-def generate(model_name: str, app_name: str = "apps"):
+def generate_crud(model_name: str, app: str = "apps"):
     """
     Generate model, schema, crud, and route for a given resource.
     """
-    model_file = f"{app_name}/{model_name.lower()}/models.py"
-    schema_file = f"{app_name}/{model_name.lower()}/schemas.py"
-    crud_file = f"{app_name}/{model_name.lower()}/crud.py"
-    routes_file = f"{app_name}/{model_name.lower()}/routes.py"
+    model_file = f"{app}/{model_name.lower()}/models.py"
+    schema_file = f"{app}/{model_name.lower()}/schemas.py"
+    crud_file = f"{app}/{model_name.lower()}/crud.py"
+    routes_file = f"{app}/{model_name.lower()}/routes.py"
 
     os.makedirs(os.path.dirname(model_file), exist_ok=True)
 
@@ -71,4 +68,4 @@ def create_{model_name.lower()}(item: schemas.{model_name}Create, db: Session = 
     return crud.create_{model_name.lower()}(db=db, obj_in=item)
 """)
 
-    typer.echo(f"✅ CRUD for '{model_name}' generated under '{app_name}/{model_name.lower()}/'")
+    typer.echo(f"✅ CRUD for '{model_name}' generated under '{app}/{model_name.lower()}/'")
