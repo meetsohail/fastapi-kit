@@ -1,0 +1,33 @@
+# 🚀 fastapi-kit
+
+**The ultimate CLI toolkit for building scalable FastAPI apps — instantly.**
+Inspired by Django’s developer experience, `fastapi-kit` helps you scaffold full FastAPI projects and apps using simple commands.
+
+---
+
+## 📦 Features
+
+- `fastapikit startproject myapp` – Scaffold a new FastAPI project
+- `fastapikit startapp users` – Create a new modular app
+- `fastapikit generate-crud Post` – Auto-generate models, schemas, routes, and CRUD logic
+- Follows clean, scalable, production-ready structure
+- Extensible for database, Celery, authentication, and more
+
+---
+
+## 🧰 Requirements
+
+- Python 3.8+
+- FastAPI installed (installed automatically)
+
+---
+
+## ⚙️ Installation
+
+```bash
+git clone https://github.com/yourusername/fastapi-kit.git
+cd fastapi-kit
+pip install -e .
+```
+
+

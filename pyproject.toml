@@ -17,3 +17,6 @@ dependencies = [
     "fastapi>=0.110.0",
     "uvicorn[standard]>=0.23"
 ]
+
+[project.scripts]
+fastapikit = "fastapi_kit.cli:main"

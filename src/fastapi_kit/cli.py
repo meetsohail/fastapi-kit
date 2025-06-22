@@ -1,5 +1,5 @@
 import typer
-from fastforge.commands import startproject, startapp, generate_crud
+from fastapi_kit.commands import startproject, startapp, generate_crud
 
 app = typer.Typer()
 app.add_typer(startproject.app, name="startproject")
