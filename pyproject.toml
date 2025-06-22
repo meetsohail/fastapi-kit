@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fastapikit"
+version = "0.1.0"
+description = "CLI scaffolding tool for FastAPI projects"
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [
+    { name="Sohail Ahmed", email="contact@sohail.work" },
+]
+dependencies = [
+    "typer>=0.9.0",
+    "jinja2>=3.1.0",
+    "fastapi>=0.110.0",
+    "uvicorn[standard]>=0.23"
+]
